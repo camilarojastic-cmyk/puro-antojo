@@ -1,0 +1,510 @@
+/* ==============================
+   2026 PURO ANTOJO
+   nueva imagen
+   ============================== */
+
+/* 1. COLORES Y TIPOGRAFÍAS */
+
+:root {
+    --cacao: #5A3829;
+    --caramelo: #C69A6B;
+    --salvia: #B7BDA0;
+    --crema: #F6F0E6;
+    --crema-tostada: #EAE0D1;
+    --blanco: #FFFFFF;
+    --texto-secundario: #6F6258;
+    --linea: #D9C9C2;
+
+    --font-title: "Playfair Display", Georgia, serif;
+    --font-body: "Lato", Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+}
+
+
+/* 2. CONFIGURACIÓN GENERAL */
+
+body {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--crema);
+    color: var(--cacao);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* 3. TÍTULOS Y TEXTOS */
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-title);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--cacao);
+}
+
+h1 {
+    font-size: 1.75rem;
+}
+
+h2 {
+    font-size: 1.75rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+.texto-secundario {
+    color: var(--texto-secundario);
+}
+
+/* 4. CONTENEDORES */
+
+.container {
+    width: min(1120px, 90%);
+    margin-inline: auto;
+}
+
+section {
+    padding: 5rem 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.section-description {
+    max-width: 650px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    color: var(--texto-secundario);
+}
+
+/* 5. ENCABEZADO */
+
+header {
+    background-color: var(--crema);
+    border-bottom: 1px solid var(--linea);
+}
+
+.navbar {
+    min-height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.logo {
+    font-family: var(--font-title);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--cacao);
+}
+
+.logo span {
+    color: var(--caramelo);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--cacao);
+    transition: color 0.25s ease;
+}
+
+.nav-links a:hover {
+    color: var(--caramelo);
+}
+
+
+
+/* 6. PORTADA PRINCIPAL */
+
+.hero {
+    display: flex;
+    align-items: center;
+    min-height: 80vh;
+    padding: 4rem 0;
+    color: var(--crema);
+    background:
+        linear-gradient(rgba(42, 27, 24, 0.6), rgba(42, 27, 24, 0.6)),
+        url("../img/tiramisu.jpeg") center / cover no-repeat;
+}
+
+.hero-content {
+    max-width: 36rem;
+}
+
+.hero h1 {
+    margin: 0 0 1rem;
+    color: var(--crema);
+    font-size: clamp(2.5rem, 9vw, 4.5rem);
+}
+
+.hero p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.hero .btn-primary {
+    background-color: var(--caramelo);
+    color: var(--cacao);
+}
+
+.hero .btn-primary:hover {
+    background-color: var(--blanco);
+}
+
+/* 7. BOTONES */
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.btn {
+    display: inline-block;
+    padding: 0.9rem 1.7rem;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.25s ease;
+}
+
+.btn-primary {
+    background-color: var(--cacao);
+    color: var(--blanco);
+}
+
+.btn-primary:hover {
+    background-color: var(--caramelo);
+    color: var(--cacao);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--cacao);
+    border-color: var(--cacao);
+}
+
+.btn-secondary:hover {
+    background-color: var(--crema);
+}
+
+.btn:focus-visible,
+a:focus-visible {
+    outline: 2px solid var(--caramelo);
+    outline-offset: 4px;
+}
+
+/* 8. PRODUCTOS */
+
+.products {
+    background-color: var(--crema);
+}
+
+
+.products-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 calc((100% - 4rem) / 3); /* 3 por fila */
+    overflow: hidden;
+    background-color: var(--blanco);
+    border: 1px solid var(--linea);
+    border-radius: 8px;
+    transition: transform 0.25s ease;
+}
+
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 1.5rem;
+}
+
+.product-info h3 {
+    margin-bottom: 0.6rem;
+}
+
+.product-info p {
+    color: var(--texto-secundario);
+}
+
+.product-price {
+    display: block;
+    margin-top: 1rem;
+    color: var(--cacao);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+/* 9. PRESENTACIÓN / SOBRE NOSOTROS */
+
+.about {
+    background-color: var(--salvia);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.about-text h2 {
+    margin-bottom: 1.5rem;
+}
+
+.about-text p {
+    color: var(--cacao);
+}
+
+/* 10. GALERÍA */
+
+.gallery {
+    background-color: var(--crema-tostada);
+}
+
+.gallery-grid {
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+    flex: 1 1 260px;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.02);
+}
+
+/* 11. CONTACTO */
+
+.contact {
+    background-color: var(--crema);
+}
+
+.contact-content {
+    display: flex;
+    gap: 4rem;
+}
+
+.contact-info {
+    flex: 0.8;
+}
+
+.contact-form {
+    flex: 1.2;
+}
+
+.contact-form label {
+    font-weight: 700;
+}
+
+.contact-form input[type="radio"] {
+    width: auto;
+    margin-right: 0.5rem;
+}
+.contact-form textarea,
+.contact-form select {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    color: var(--cacao);
+    background-color: var(--blanco);
+    border: 1px solid var(--linea);
+    border-radius: 4px;
+}
+
+.contact-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+    outline: 2px solid var(--salvia);
+    border-color: var(--salvia);
+}
+
+
+/* 12. PIE DE PÁGINA */
+
+footer {
+    padding: 2.5rem 0;
+    background-color: var(--cacao);
+    color: var(--crema);
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: 0.75rem;
+}
+
+.footer-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--caramelo);
+    font-weight: 700;
+}
+
+.footer-link:hover {
+    color: var(--blanco);
+}
+
+.icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    flex-shrink: 0;
+}
+
+/* 13. DISEÑO ADAPTABLE A CELULARES */
+
+@media (max-width: 900px) {
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .contact-content {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    .hero {
+        padding: 4rem 0;
+    }
+
+    .product-card {
+        flex-basis: calc((100% - 2rem) / 2); /* 2 por fila */
+    }
+
+    .about-image {
+        order: 2;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    section {
+        padding: 3.5rem 0;
+    }
+
+    .navbar {
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1.2rem 0;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .product-card {
+        flex-basis: 100%; /* 1 por fila */
+    }
+
+    .gallery-grid img {
+        height: 240px;
+    }
+
+    .section-description {
+        margin-bottom: 2rem;
+    }
+}
